@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pinterwood Furniture | Jepara</title>
+
+<style>
+    
+.features{
+padding:40px 20px;
+margin-bottom:0;
+}
+
+.contact-section{
+padding:30px 20px;
+margin-top:0;
+text-align:center;
+background:#f7f7f7;
+}
+
+.contact-box{
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
+margin-top:15px;
+}
+
+.contact-box a{
+background:white;
+padding:10px 16px;
+border-radius:8px;
+text-decoration:none;
+color:#333;
+box-shadow:0 3px 8px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.contact-box a:hover{
+background:#2e8b57;
+color:white;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f4f4f4;
+color:#333;
+}
+
+/* NAVBAR */
+
+.navbar{
+background:#1f1f1f;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:16px 40px;
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+}
+
+.navbar a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+/* HERO */
+
+.hero{
+min-height:90vh;
+background:url("https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2070&auto=format&fit=crop") center/cover no-repeat;
+display:flex;
+align-items:center;
+}
+
+.hero-overlay{
+width:100%;
+height:100%;
+background:linear-gradient(
+90deg,
+rgba(0,0,0,0.7),
+rgba(0,0,0,0.4)
+);
+padding:60px;
+display:flex;
+align-items:center;
+}
+
+.hero-content{
+max-width:650px;
+color:white;
+}
+
+.hero-content h1{
+font-size:50px;
+margin-bottom:15px;
+}
+
+.hero-content p{
+font-size:18px;
+line-height:1.6;
+margin-bottom:25px;
+}
+
+.hero-buttons{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.btn-main{
+background:#2e8b57;
+padding:14px 22px;
+border-radius:6px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+.btn-wa{
+background:#25D366;
+padding:14px 22px;
+border-radius:6px;
+color:white;
+text-decoration:none;
+font-weight:bold;
+}
+
+/* JUDUL KATALOG */
+
+.judul-katalog{
+text-align:center;
+font-size:36px;
+margin-top:50px;
+margin-bottom:20px;
+}
+
+/* CATEGORY */
+
+.category{
+text-align:center;
+margin-bottom:30px;
+}
+
+.category button{
+padding:12px 18px;
+border:none;
+background:#333;
+color:white;
+margin:6px;
+cursor:pointer;
+border-radius:6px;
+font-size:16px;
+}
+
+/* CATALOG */
+
+.catalog{
+padding:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,260px));
+gap:22px;
+justify-content:center;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 6px 14px rgba(0,0,0,0.1);
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-body{
+padding:15px;
+text-align:center;
+}
+
+.card-body h3{
+font-size:16px;
+margin-bottom:6px;
+}
+
+.price{
+color:#2e8b57;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.detail-btn{
+background:#333;
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:6px;
+cursor:pointer;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+}
+
+.modal-box{
+background:white;
+padding:25px;
+border-radius:10px;
+width:90%;
+max-width:420px;
+text-align:center;
+}
+
+.modal-box img{
+width:60%;
+border-radius:5px;
+margin-bottom:10px;
+}
+
+.close{
+float:right;
+cursor:pointer;
+font-size:20px;
+}
+
+.order{
+display:inline-block;
+margin-top:12px;
+background:#25D366;
+color:white;
+padding:12px 18px;
+border-radius:6px;
+text-decoration:none;
+}
+
+/* FEATURES BAWAH */
+
+.features{
+background:#f5f5f5;
+padding:70px 40px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+max-width:1200px;
+margin:auto;
+}
+
+.feature-box{
+background:white;
+padding:30px;
+border-radius:12px;
+text-align:center;
+box-shadow:0 6px 14px rgba(0,0,0,0.08);
+transition:0.3s;
+border-top:4px solid #2e8b57;
+}
+
+.feature-box:hover{
+transform:translateY(-5px);
+box-shadow:0 10px 20px rgba(0,0,0,0.15);
+}
+
+.feature-box h3{
+margin-bottom:10px;
+font-size:20px;
+color:#2e8b57;
+}
+
+.feature-box p{
+font-size:14px;
+line-height:1.6;
+color:#555;
+}
+
+/* WA FLOAT */
+
+.wa-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:16px;
+border-radius:50%;
+font-size:22px;
+text-decoration:none;
+}
+
+/* FOOTER */
+
+footer{
+background:#1f1f1f;
+color:white;
+text-align:center;
+padding:30px;
+margin-top:40px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width:600px){
+
+.judul-katalog{
+font-size:26px;
+}
+
+.category button{
+font-size:14px;
+padding:10px 14px;
+margin:4px;
+}
+
+.hero-content h1{
+font-size:34px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="navbar">
+
+<div class="logo">Pinterwood</div>
+
+<div>
+<a href="#">Home</a>
+<a href="#catalog">Katalog</a>
+<a href="https://wa.me/6285172227064?text=Hallo%20PinterWood%20Indonesia%2C%20i%20want%20to%20ask%20about%20the%20product">WhatsApp</a>
+</div>
+
+</div>
+
+<section class="hero">
+
+<div class="hero-overlay">
+
+<div class="hero-content">
+
+<h1>Pinterwood Furniture</h1>
+
+<p>
+Furniture kayu berkualitas dari Jepara.
+Melayani pembuatan furniture rumah,
+cafe, hotel dan interior custom.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#catalog" class="btn-main">Lihat Katalog</a>
+
+<a href="https://wa.me/6285172227064?text=Hallo%20PinterWood%20Indonesia%2C%20i%20want%20to%20ask%20about%20the%20product" class="btn-wa">Konsultasi WhatsApp</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<h2 class="judul-katalog">Kategori Katalog</h2>
+
+<div class="category">
+
+<button onclick="filter('all')">Semua</button> <button onclick="filter('chair')">Kursi</button> <button onclick="filter('table')">Meja</button> <button onclick="filter('cabinet')">Lemari</button> <button onclick="filter('bed')">Tempat Tidur</button> <button onclick="filter('decor')">Dekorasi</button>
+
+</div>
+
+<section class="catalog" id="catalog"></section>
+
+<section class="features">
+
+<div class="feature-box">
+<h3>Material Berkualitas</h3>
+<p>Menggunakan teak wood dan mahogany pilihan.</p>
+</div>
+
+<div class="feature-box">
+<h3>Custom Design</h3>
+<p>Bisa request ukuran, warna dan model.</p>
+</div>
+
+<div class="feature-box">
+<h3>Harga Pengrajin</h3>
+<p>Langsung dari workshop Jepara.</p>
+</div>
+
+<div class="feature-box">
+<h3>Pengiriman Aman</h3>
+<p>Melayani pengiriman seluruh Indonesia.</p>
+</div>
+
+</section>
+<section class="contact-section">
+
+<h2>Hubungi Kami</h2>
+
+<div class="contact-box">
+
+<a href="https://maps.google.com" target="_blank">
+📍 Jepara, Jawa Tengah
+</a>
+
+<a href="https://wa.me/6285172227064?text=Hallo%20PinterWood%20Indonesia%2C%20i%20want%20to%20ask%20about%20the%20product" target="_blank">
+📱 WhatsApp
+</a>
+
+<a href="https://www.instagram.com/pinterwood.id/" target="_blank">
+📸 Instagram
+</a>
+
+<a href="https://shopee.co.id/pinterwood.furniture" target="_blank">
+🛒 Shopee
+</a>
+
+<a href="mailto:email@gmail.com">
+✉ Email
+</a>
+
+</div>
+
+</section>
+
+
+<div id="modal" class="modal">
+
+<div class="modal-box">
+
+<span class="close" onclick="closeModal()">✖</span>
+
+<img id="modalImg">
+
+<h2 id="modalTitle"></h2>
+
+<p id="modalDesc"></p>
+
+<a id="orderBtn" class="order" target="_blank">Order via WhatsApp</a>
+
+</div>
+
+</div>
+
+<a class="wa-float" href="https://wa.me/6285172227064?text=Hallo%20PinterWood%20Indonesia%2C%20i%20want%20to%20ask%20about%20the%20product">💬</a>
+
+<footer>
+
+<p>© 2026 Pinterwood Furniture</p>
+<p>Furniture Jepara Berkualitas</p>
+
+</footer>
+
+<script>
+
+const products=[
+
+{name:"Wing Chair Romeny",cat:"chair",img:"images/wing chair romeny.jpeg",price:"Rp 2.750.000",desc:"Kursi klasik elegan dari kayu mahogany."},
+
+{name:"Retro Chair",cat:"chair",img:"images/Retro chair.jpeg",price:"Rp 765.000",desc:"Kursi retro minimalis untuk cafe dan rumah."},
+
+{name:"Weka Chair",cat:"chair",img:"images/Weka chair.jpeg",price:"Rp 1.280.000",desc:"Kursi makan modern finishing natural teak."},
+
+{name:"Vincy Bar Chair",cat:"chair",img:"images/Vincy bar chair.jpeg",price:"Rp 1.875.000",desc:"Kursi bar elegan untuk cafe."},
+
+{name:"Dinning Set Meo",cat:"table",img:"images/Dinning set meo 6 chair.jpeg",price:"Rp 16.760.000",desc:"Meja makan lengkap dengan 6 kursi."},
+
+{name:"Shoe Bench Teak",cat:"cabinet",img:"images/Shoe banch teak.jpeg",price:"Rp 2.900.000",desc:"Bangku sepatu dengan rak penyimpanan."},
+
+{name:"Shoe Cupboard",cat:"cabinet",img:"images/Shoe cupboard.jpeg",price:"Rp 3.615.000",desc:"Lemari sepatu minimalis."},
+
+{name:"Cupboard Hexa",cat:"cabinet",img:"images/Cupboard 3d hexa.jpeg",price:"Rp 2.150.000",desc:"Lemari dekorasi motif hexagonal."},
+
+{name:"Dipan Rosemeny",cat:"bed",img:"images/Dipan rosemeny.jpeg",price:"Rp 12.460.000",desc:"Tempat tidur elegan finishing gold duco."},
+
+{name:"Mirror De'san",cat:"decor",img:"images/Miror De'san.jpeg",price:"Rp 1.762.000",desc:"Cermin dekorasi interior."}
+
+]
+
+let currentList=[...products]
+
+function loadProducts(list){
+
+currentList=list
+
+const catalog=document.getElementById("catalog")
+
+catalog.innerHTML=""
+
+list.forEach((p,i)=>{
+
+catalog.innerHTML+=`
+
+<div class="card">
+
+<img src="${p.img}">
+
+<div class="card-body">
+
+<h3>${p.name}</h3>
+
+<div class="price">${p.price}</div>
+
+<button class="detail-btn" onclick="showProduct(${i})">Detail</button>
+
+</div>
+
+</div>
+
+`
+
+})
+
+}
+
+function filter(cat){
+
+if(cat==="all"){
+loadProducts(products)
+}else{
+loadProducts(products.filter(p=>p.cat===cat))
+}
+
+}
+
+function showProduct(i){
+
+const p=currentList[i]
+
+modalImg.src=p.img
+modalTitle.innerHTML=p.name
+modalDesc.innerHTML=p.desc+"<br><b>"+p.price+"</b>"
+
+orderBtn.href="https://wa.me/6285172227064?text=Hallo%20PinterWood%20Indonesia%2C%20i%20want%20to%20ask%20about%20the%20product"+p.name
+
+modal.style.display="flex"
+
+}
+
+function closeModal(){
+
+modal.style.display="none"
+
+}
+
+loadProducts(products)
+
+</script>
+
+</body>
+</html>
